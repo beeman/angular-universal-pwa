@@ -4,7 +4,10 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "npm run build:browser && npm run build:server && npm run build:webpack",
+    "build:browser": "ng build angular-universal-pwa --prod",
+    "build:server": "ng run angular-universal-pwa:server:production",
+    "build:webpack": "webpack --config webpack.config.js --progress --colors",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -19,9 +22,13 @@
     "@angular/http": "~7.0.0-beta.5",
     "@angular/platform-browser": "~7.0.0-beta.5",
     "@angular/platform-browser-dynamic": "~7.0.0-beta.5",
+    "@angular/platform-server": "~7.0.0-beta.5",
     "@angular/router": "~7.0.0-beta.5",
+    "@nguniversal/express-engine": "^6.1.0",
+    "@nguniversal/module-map-ngfactory-loader": "^6.1.0",
     "core-js": "^2.5.4",
     "rxjs": "~6.3.2",
+    "ts-loader": "^5.1.1",
     "zone.js": "~0.8.26"
   },
   "devDependencies": {
@@ -43,6 +50,7 @@
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
     "tslint": "~5.11.0",
-    "typescript": "~3.0.1"
+    "typescript": "~3.0.1",
+    "webpack-cli": "^3.1.0"
   }
 }
