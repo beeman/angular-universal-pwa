@@ -11,7 +11,8 @@
     "serve": "node dist/server",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "now": "now && now alias"
   },
   "private": true,
   "dependencies": {

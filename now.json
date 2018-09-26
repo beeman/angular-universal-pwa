@@ -1,0 +1,9 @@
+{
+  "name": "angular-universal-pwa",
+  "alias": "angular-universal-pwa",
+  "type": "docker",
+  "files": [
+    "Dockerfile",
+    "dist"
+  ]
+}
