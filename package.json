@@ -8,6 +8,7 @@
     "build:browser": "ng build angular-universal-pwa --prod",
     "build:server": "ng run angular-universal-pwa:server:production",
     "build:webpack": "webpack --config webpack.config.js --progress --colors",
+    "serve": "node dist/server",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

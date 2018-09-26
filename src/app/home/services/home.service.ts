@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { makeStateKey, StateKey, TransferState } from '@angular/platform-browser';
-import { tap } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 import { Observable, of } from 'rxjs';
 
 const STATE_KEY: StateKey<any> = makeStateKey('home');
@@ -25,7 +25,8 @@ export class HomeService {
     console.log('Loading from API');
     return this.http.get<{ results: any[] }>('https://randomuser.me/api?results=5')
       .pipe(
-        tap(res => this.state.set(STATE_KEY, res.results)),
+        map(res => res.results),
+        tap(res => this.state.set(STATE_KEY, res)),
       );
   }
 }
